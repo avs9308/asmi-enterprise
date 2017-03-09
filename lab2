@@ -1,0 +1,6 @@
+FROM ubuntu:latest
+run apt-get update && apt-get install apache2
+expose 80
+copy ./explore_california/ ./var/www/html/
+entrypoint ["service","apache2","start"]
+
